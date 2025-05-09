@@ -1,0 +1,114 @@
+
+Page
+1
+of 8
+HW11: Graphic Design
+Warm up due Friday at 11:59pm (grace period until 8am the following day)
+Main due Wednesday at 1pm (or otherwise before your section starts) on Courseworks (no
+grace period – feedback will be given in class)
+Note: if your TA feedback meetings are not Wednesdays 1-2:30, then you may have slightly
+different deadlines. Please turn in assignments according to instructions given by your TA.
+Warm-up:
+1. Group.
+o Feedback. What feedback did you get from your TA on your technical prototype?
+§ What’s something good about your technical prototype from HW10?
+§ What are the things your TA said you still need to work on with regard to
+implementing a fully functional technical prototype?
+o Job assignments.
+§ Some group members may focus on graphic design and some may focus
+on continuing technical implementation. List the roles you plan to have
+and the names of the people assigned to them.
+§ If you’re a solo group, list what technical implementation you plan to do
+this week.
+2. Individual:
+o Your turn to give UI feedback!
+§ Try the website to make a joke based on an image you like
+• https://www.crackd.ai/
+§ We recommend you make an account. If you do, you have to use a
+barnard.edu or Columbia.edu email address
+§ You can use select an existing image or upload your own that you want to
+“crack”
+§ For whatever image you make a joke for,
+• Post the screenshot to the #crackd channel on UI Design Slack (or
+DM it to Michael Roger on Slack, if you don’t want to post it to
+everyone).
+§ Write up: Give feedback on the UI and experience.
+• Show us the screenshot to Courseworks
+• What’s one thing that went well about the UI?
+• What’s one thing that could be better about the UI?
+• Were you able to find something you found amusing?
+o Extra credit (1pt): Share your image outside of this class!
+§ Share the image + generated caption on something: Instagram, Twitter,
+email, Sidechat, 4chan, a Columbia Spectator op-ed, etc.
+§ Take a screenshot of the image + generated caption that you posted and
+upload to Courseworks in “HW 11 Extra Credit” assignment
+§ If you have feedback on the sharing process, we’d love to know! Just
+write it in the HW 11 Extra credit doc.
+Screenshot example (that you’ll need to post on the class #crackd channel)
+Extra credit screenshot examples (left: Sidechat, right: Instagram):
+What to turn in:
+• A PDF with the answers to all the questions.
+• Submit the extra credit separately (if you are submitting it)
+Although the group work can done collectively, everyone in the group must turn in the work
+individually. (You may turn in identical work for group portions of the assignment)
+Main Assignment
+In this assignment you will design the information hierarchy and color for the 4-5 most
+important types of screens. This probably includes:
+1. Home screen
+2. One learning screen
+3. One quiz screen
+4. The final quiz feedback screen
+5. (If you have it) A screen that transitions between learning and quiz
+The designs should be done in Google Slides.
+You should turn in PDFs of those designs and well as PDFs of those designs with the annotations
+we ask for in problems #1 and #2.
+Lastly, we ask you to implement the design of at least one of your slides in your code base.
+(Probably the home page, but it’s up to you).
+Your design and implementation must include a nav bar.
+1. Information Hierarchy Design (including Conceptual groups)
+Create the information hierarchy design for the 4-5 most important screens in slides.
+Annotate the design as follows:
+A. Conceptual groups should be shown in red circles
+B. Beside each group, use red text to annotate what the concept behind each group is.
+C. The text should have a number that indicates what order the user is intended to see it
+in.
+D. Within each group, use blue to outline or underline the most important piece of
+information.
+Here are examples from class slides:
+Conceptual groups and concept annotation:
+Annotation of important information should be a blue underline or box.
+Here’s another example of the most important information annotated in blue, this time for the
+improved design.
+2. Color Design
+Colors design should be annotated with the
+• base color,
+• accent color (point to multiple places if applicable),
+• light grey
+• dark grey.
+If you don’t have light and dark greys contact your TA. It might be okay to have only one grey
+and your TA can confirm, but if you’re missing both greys, you probably have some graphic
+design problems – without use of greys the colors on an interface can get very saturated very
+quickly. This might be okay, but it might not be. Just ask your TA.
+Turn in annotation of all the 4-5 most important screens
+3. Font
+Pick one important piece of text (such as the title of the webpage) and make a choice about
+what font to use. Justify why. Related the choice back to the meaning, purpose, or use of the
+site. At the very least decide if the font should be serif or sans-serif, based on the principles
+mentioned in class (there was an entire lecture on fonts, and I gave a recap of that discussion
+on lecture 4/15)
+In your write up, include a picture of the font, and describe why.
+For example:
+For the title of my site (“Lipreading”) I picked a font-face that looks like typewriter letters.
+Because the website is about reading, there is a conceptual connection to reading/writing.
+Typewriter fonts capture that.
+4. Technical Implementation of the design
+Implement the design of at least one of the screens you designed in the previous problem.
+Turn in a screenshot of the technical implementation.
+What to turn in:
+• Group. A PDF with a list of the contributions of each group member. It’s okay if this
+deviated from what you planned in the warm up.
+• Group. A PDF of your 4-5 slides with the graphic design annotation on them.
+• Group. A PDF of your 4-5 slides with the color annotation on them.
+• Group. A PDF with your answer to the font design question.
+• Group. A PDF of a screenshot of the implementation of the graphic design for at least
+one screen.
