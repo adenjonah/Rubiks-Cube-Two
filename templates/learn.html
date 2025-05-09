@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ module.title }} - Rubik's Cube Solver{% endblock %}
+
+{% block content %}
+<div class="learn-container">
+    <div class="module-progress">
+        Module {{ module_id }}: {{ module.title }} - Page {{ page_id }} of {{ module.pages|length }}
+        <div class="progress-bar-container">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: {{ progress_percent }}%"></div>
+            </div>
+            <span class="progress-text">{{ progress_percent }}% complete</span>
+        </div>
+    </div>
+    
+    <h1>{{ page.title }}</h1>
+    
+    <div class="page-content">
+        <p>{{ page.content|safe }}</p>
+    </div>
+    
+    <div class="page-nav form-buttons">
+        {% if page_id > 1 %}
+        <a href="{{ url_for('learn', module_id=module_id, page_id=page_id-1) }}" class="btn btn-back">Previous</a>
+        {% else %}
+        <a href="{{ url_for('home') }}" class="btn btn-back">Back to Home</a>
+        {% endif %}
+        
+        {% if page_id < module.pages|length %}
+        <a href="{{ url_for('learn', module_id=module_id, page_id=next_page) }}" class="btn btn-primary">Next</a>
+        {% else %}
+        <a href="{{ url_for('mini_quiz', module_id=module_id, question_id=1) }}" class="btn btn-primary">Take Mini Quiz</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %} 

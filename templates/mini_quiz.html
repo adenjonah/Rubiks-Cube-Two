@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}Mini Quiz - {{ module.title }}{% endblock %}
+
+{% block content %}
+<div class="quiz-container">
+    <div class="module-progress">
+        Module {{ module_id }}: {{ module.title }} - Mini Quiz Question {{ question_id }} of {{ module.mini_quiz|length }}
+    </div>
+    
+    <h1>Mini Quiz: {{ module.title }}</h1>
+    
+    <div class="question">
+        <h3>Question {{ question_id }}:</h3>
+        <p>{{ question.question|safe }}</p>
+        
+        {% if feedback %}
+        <div class="feedback {% if is_correct %}correct{% else %}incorrect{% endif %}">
+            <p><strong>{% if is_correct %}Correct!{% else %}Incorrect!{% endif %}</strong></p>
+            <p>{{ question.explanation|safe }}</p>
+            <div class="page-nav form-buttons" style="margin-top: 20px;">
+                <div>
+                    {% if question_id > 1 %}
+                    <a href="{{ url_for('mini_quiz', module_id=module_id, question_id=question_id-1) }}" class="btn btn-back">Previous</a>
+                    {% else %}
+                    <a href="{{ url_for('learn', module_id=module_id, page_id=module.pages|length) }}" class="btn btn-back">Back to Module</a>
+                    {% endif %}
+                </div>
+                <div>
+                    {% if question_id < module.mini_quiz|length %}
+                    <a href="{{ url_for('mini_quiz', module_id=module_id, question_id=question_id+1) }}" class="btn btn-primary">Next Question</a>
+                    {% else %}
+                    {% if module_id < modules_length %}
+                    <a href="{{ url_for('learn', module_id=module_id+1, page_id=1) }}" class="btn btn-primary">Next Module</a>
+                    {% else %}
+                    <a href="{{ url_for('quiz', question_id=1) }}" class="btn btn-primary">Take Final Quiz</a>
+                    {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <form method="post">
+            {% if question.type == 'multiple_choice' %}
+                <ul class="options">
+                    {% for option in question.options %}
+                    <li class="option">
+                        <label>
+                            <input type="radio" name="answer" value="{{ option }}" required>
+                            {{ option }}
+                        </label>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% elif question.type == 'fill_in_blank' %}
+                <input type="text" name="answer" placeholder="Your answer" required>
+            {% elif question.type == 'multiple_select' %}
+                <ul class="options">
+                    {% for option in question.options %}
+                    <li class="option">
+                        <label>
+                            <input type="checkbox" name="answer" value="{{ option }}">
+                            {{ option }}
+                        </label>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            
+            <div class="page-nav form-buttons" style="margin-top: 20px;">
+                {% if question_id > 1 %}
+                <a href="{{ url_for('mini_quiz', module_id=module_id, question_id=question_id-1) }}" class="btn btn-back">Previous</a>
+                {% else %}
+                <a href="{{ url_for('learn', module_id=module_id, page_id=module.pages|length) }}" class="btn btn-back">Back to Module</a>
+                {% endif %}
+                
+                <button type="submit" class="btn btn-success">Submit Answer</button>
+            </div>
+        </form>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+    .question img {
+        width: 60%;
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+{% endblock %} 

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Quiz Results - Rubik's Cube Solver{% endblock %}
+
+{% block content %}
+<div class="results-container">
+    <h1>Quiz Results</h1>
+    
+    <div class="score">
+        <div class="grade">{{ score|round|int }}%</div>
+        <p>You answered {{ correct_answers }} out of {{ total_questions }} questions correctly</p>
+        
+        {% if score >= 80 %}
+        <p>Excellent! You've mastered the Rubik's Cube basics!</p>
+        {% elif score >= 60 %}
+        <p>Good job! You're on your way to becoming a Rubik's Cube master.</p>
+        {% else %}
+        <p>Keep practicing! Review the modules to improve your understanding.</p>
+        {% endif %}
+    </div>
+    
+    <h2>Question Review</h2>
+    <p class="instruction">Review all questions below. Incorrect answers are highlighted in red with the correct answer shown.</p>
+    
+    <div class="results-scroll-container">
+        {% for question_id, result in results.items() %}
+        <div class="result-item {% if result.correct %}correct{% else %}incorrect{% endif %}">
+            <h3>Question {{ question_id }}:</h3>
+            <p>{{ result.question }}</p>
+            
+            <p><strong>Your answer:</strong> {{ result.user_answer }}</p>
+            
+            {% if not result.correct %}
+            <p><strong>Correct answer:</strong> {{ result.correct_answer }}</p>
+            <p><strong>Explanation:</strong> {{ result.explanation }}</p>
+            {% else %}
+            <p><strong>Explanation:</strong> {{ result.explanation }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="form-buttons" style="text-align: center; margin-top: 30px;">
+        <a href="{{ url_for('home') }}" class="btn btn-back">Back to Home</a>
+        <a href="{{ url_for('quiz', question_id=1) }}" class="btn btn-primary">Try Again</a>
+    </div>
+</div>
+
+<script>
+    // Log incorrect questions to console
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("Quiz Results - Incorrect Questions:");
+        const incorrectItems = document.querySelectorAll('.result-item.incorrect');
+        incorrectItems.forEach(function(item, index) {
+            const questionText = item.querySelector('h3').textContent.trim();
+            const question = item.querySelector('p').textContent.trim();
+            const userAnswer = item.querySelectorAll('p')[1].textContent.trim().replace('Your answer:', '').trim();
+            const correctAnswer = item.querySelectorAll('p')[2].textContent.trim().replace('Correct answer:', '').trim();
+            
+            console.log(`${index + 1}. ${questionText}`);
+            console.log(`   Question: ${question}`);
+            console.log(`   Your answer: ${userAnswer}`);
+            console.log(`   Correct answer: ${correctAnswer}`);
+            console.log('-----------------------------------');
+        });
+        
+        if (incorrectItems.length === 0) {
+            console.log("Perfect score! No incorrect questions.");
+        } else {
+            console.log(`Total incorrect: ${incorrectItems.length}`);
+        }
+    });
+</script>
+{% endblock %} 

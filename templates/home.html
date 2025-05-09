@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Rubik's Cube Solver{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Learn to Solve a Rubik's Cube</h1>
+    <p>Master the art of solving a Rubik's Cube with our step-by-step guide.</p>
+    <a href="{{ url_for('learn', module_id=1, page_id=1) }}" class="btn btn-primary">Start Learning</a>
+</div>
+
+<h2>Learning Modules</h2>
+<div class="modules">
+    {% for module in modules_data.modules %}
+    {% set module_progress = modules_progress|selectattr('id', 'equalto', module.id)|first %}
+    <div class="module-card {% if module_progress.completed %}completed{% endif %}">
+        <div class="module-header">
+            <h3>{{ module.title }}</h3>
+            {% if module_progress.completed %}
+            <span class="completion-badge">Completed!</span>
+            {% endif %}
+        </div>
+        <p>{{ module.description }}</p>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: {{ module_progress.progress_percent }}%"></div>
+        </div>
+        <div class="progress-info">
+            <span>{{ module_progress.pages_completed }} of {{ module_progress.total_pages }} pages completed</span>
+            {% if module_progress.mini_quiz_completed %}
+            <span class="quiz-complete">Quiz Complete ✓</span>
+            {% endif %}
+        </div>
+        <a href="{{ url_for('learn', module_id=module.id, page_id=1) }}" class="btn btn-primary">
+            {% if module_progress.pages_completed > 0 %}Continue Module{% else %}Start Module{% endif %}
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="test-knowledge-section">
+    <h2>Test Your Knowledge</h2>
+    <p>Ready to test what you've learned?</p>
+    {% if progress.final_quiz_attempted %}
+    <div class="quiz-status">
+        <p>You've already attempted the quiz with a score of <strong>{{ progress.final_quiz_score|round|int }}%</strong></p>
+    </div>
+    {% endif %}
+    <a href="{{ url_for('quiz', question_id=1) }}" class="btn btn-primary">
+        {% if progress.final_quiz_attempted %}Retake Quiz{% else %}Take the Quiz{% endif %}
+    </a>
+</div>
+{% endblock %} 

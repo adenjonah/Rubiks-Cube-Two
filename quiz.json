@@ -1,0 +1,70 @@
+{"quiz_questions": [
+    {
+      "id": 1,
+      "question": "What move would you make to rotate the top face clockwise?",
+      "type": "multiple_choice",
+      "options": ["U", "U'", "F", "R"],
+      "correct_answer": "U",
+      "explanation": "U represents the Up face rotating clockwise."
+    },
+    {
+      "id": 2,
+      "question": "The notation for rotating the right face counterclockwise is ___.",
+      "type": "fill_in_blank",
+      "correct_answer": "R'",
+      "explanation": "R' indicates the Right face rotating counterclockwise."
+    },
+    {
+      "id": 3,
+      "question": "How many edge pieces need to be placed to form the white cross?",
+      "type": "multiple_choice",
+      "options": ["3", "4", "6", "8"],
+      "correct_answer": "4",
+      "explanation": "The white cross consists of 4 edge pieces that connect the white center to the 4 adjacent face centers."
+    },
+    {
+      "id": 4,
+      "question": "When placing a white corner piece, the white sticker should be facing ___.",
+      "type": "fill_in_blank",
+      "correct_answer": "up",
+      "explanation": "When correctly placed, the white part of each corner should be facing up (on the white face)."
+    },
+    {
+      "id": 5,
+      "question": "What algorithm is commonly used to place white corners?",
+      "type": "multiple_choice",
+      "options": ["F R F' R'", "R' D' R D", "U R U' R'", "L' B L B'"],
+      "correct_answer": "R' D' R D",
+      "explanation": "The algorithm R' D' R D is a common sequence for placing white corners. It may need to be repeated multiple times for correct orientation."
+    },
+    {
+      "id": 6,
+      "question": "If you apply the algorithm F R U R' U' F' to a cube with a completed white cross on top, which pieces will be affected?",
+      "type": "multiple_choice",
+      "options": [
+        "Only the white corners", 
+        "Only the top layer edges",
+        "Both the top layer edges and corners, but nothing on the bottom layer", 
+        "Pieces on all three layers of the cube"
+      ],
+      "correct_answer": "Pieces on all three layers of the cube",
+      "explanation": "The algorithm F R U R' U' F' affects multiple layers of the cube. The F and F' moves affect pieces on the front face spanning all three layers. The R, U, R', and U' moves then further redistribute pieces throughout the cube, resulting in changes to pieces on all three layers."
+    },
+    {
+      "id": 8,
+      "question": "What is the standard color opposite to white on a Rubik's Cube?",
+      "type": "multiple_choice",
+      "options": ["Red", "Yellow", "Blue", "Green"],
+      "correct_answer": "Yellow",
+      "explanation": "On a standard Rubik's Cube, yellow is opposite to white."
+    },
+    {
+      "id": 9,
+      "question": "What algorithm can you use to place a white edge from the bottom layer to the top without disturbing other edges?",
+      "type": "multiple_choice",
+      "options": ["R U R' U'", "F2", "D L D' L'", "U R U'"],
+      "correct_answer": "F2",
+      "explanation": "F2 (turning the front face twice) can move a white edge from the bottom layer to the top when positioned directly below its destination, without disturbing other correctly placed white edges."
+    }
+  ]
+}

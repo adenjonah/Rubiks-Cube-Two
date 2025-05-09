@@ -1,0 +1,221 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "title": "Cube Structure",
+      "description": "Learn about the basic structure of a Rubik's Cube and understand its components",
+      "pages": [
+        {
+          "id": 1,
+          "title": "Basic Structure",
+          "content": "The first thing to know about a Rubik's cube is its fundamental structure. A standard 3×3×3 Rubik's cube has six faces, each with a colored centerpiece. These centerpieces are fixed to an internal core and cannot move from their relative positions — they can only rotate in place, serving as the anchors for each face.<br><br><img src='/static/images/structure.png' alt='Rubiks Cube Structure' class='content-image'>"
+        },
+        {
+          "id": 2,
+          "title": "Face Colors",
+          "content": "On a standard Rubik's cube, the colors are arranged in specific opposite pairs: white is always opposite yellow, red is always opposite orange, and green is always opposite blue. When you rotate any face of the cube, the only pieces that change position are the edge and corner pieces connected to that face — the centers remain fixed in relation to each other.<br><br><video controls class='content-video'><source src='/static/videos/opposite-sides.mp4' type='video/mp4'>Your browser does not support the video tag.</video>"
+        },
+        {
+          "id": 3,
+          "title": "Edge Pieces",
+          "content": "There are exactly 12 edge pieces on a Rubik's cube, and each has exactly two colors. Note that you will never find a white-yellow edge piece because white and yellow are on opposite sides of the cube. The same is true for all opposite color pairs.<br><br>The white edge pieces found on a standard cube are:<br><br>White-Red edge<br>White-Blue edge<br>White-Orange edge<br>White-Green edge<br><br>The other edge pieces on a standard cube:<br><br>Yellow-Red edge<br>Yellow-Blue edge<br>Yellow-Orange edge<br>Yellow-Green edge<br>Red-Blue edge<br>Blue-Orange edge<br>Orange-Green edge<br>Green-Red edge<br><br>These four white edges are what you'll need to position correctly when forming the white cross in the first step of solving the cube."
+        },
+        {
+          "id": 4,
+          "title": "Corner Pieces",
+          "content": "A Rubik's cube has 8 corner pieces, each displaying three colors that correspond to the three faces they connect. For instance, one of the corner pieces is white-red-blue. It's important to understand that there are no corner pieces that include both white and yellow, both red and orange, or both green and blue, as these colors are opposite each other. Each corner piece consistently retains its three specific colors.<br><br>The four corner pieces that have white on them are:<br><ul><li>white-red-blue</li><li>white-red-green</li><li>white-blue-orange</li><li>white-green-orange</li></ul>"
+        },
+        {
+          "id": 5,
+          "title": "Important to Remember",
+          "content": "The stickers on the cube do not move independently of their pieces. This means a corner piece will always have the same three colors, and an edge piece will always have the same two colors. What changes during solving is the position and orientation of these pieces around the fixed centers. Once you understand this, you'll realize that solving the cube is about moving pieces to their correct locations with the correct orientation."
+        },
+        {
+          "id": 6,
+          "title": "Cube Notation - Basic Moves",
+          "content": "To communicate Rubik's Cube moves clearly, we use a standard notation system. Each letter represents a face of the cube:<br><br><ul><li><strong>F</strong>: Front face (the face facing you)</li><li><strong>B</strong>: Back face (the face away from you)</li><li><strong>U</strong>: Up face (the top face)</li><li><strong>D</strong>: Down face (the bottom face)</li><li><strong>R</strong>: Right face (the face on your right)</li><li><strong>L</strong>: Left face (the face on your left)</li></ul><br>A letter by itself means to turn that face 90 degrees clockwise (when looking directly at that face). For example, \"U\" means turn the top face clockwise.<br><br><strong>Important note about direction:</strong> \"Clockwise\" and \"counterclockwise\" are always determined from the perspective of looking directly at the face being turned. This means that if you were to turn the cube around and look at the back face, a B (back clockwise) move would appear to be going in the opposite physical direction as an F (front clockwise) move. Think of it as if you were standing in front of each face you're about to turn.<br><br>If a letter is followed by an apostrophe ('), it means to turn that face 90 degrees counterclockwise (again, when looking directly at that face). For example, \"R'\" means turn the right face counterclockwise.<br><br>If a letter is followed by the number 2, it means to turn that face 180 degrees (a half-turn). For example, \"F2\" means turn the front face 180 degrees."
+        },
+        {
+          "id": 7,
+          "title": "Cube Notation - Examples",
+          "content": "Here are some examples of common move sequences (algorithms) and what they mean:<br><br><ul><li><strong>R U R'</strong>: Turn the right face clockwise, then the top face clockwise, then the right face counterclockwise.</li><li><strong>F2 U' F2</strong>: Turn the front face 180 degrees, then the top face counterclockwise, then the front face 180 degrees again.</li><li><strong>R' D' R D</strong>: This is the corner insertion algorithm you'll learn in Module 3. It turns the right face counterclockwise, then the bottom face counterclockwise, then the right face clockwise, then the bottom face clockwise.</li></ul><br>When following algorithms, it's important to maintain the same orientation of the cube throughout the sequence unless specified otherwise. Usually, we hold the cube with the white face on top and the red face in front when starting to solve.<br><br>As you progress in your Rubik's Cube journey, you'll become more familiar with these notations and will be able to read and execute algorithms fluently."
+        }
+      ],
+      "mini_quiz": [
+        {
+          "id": 1,
+          "question": "How many edge pieces does a Rubik's cube have?",
+          "type": "multiple_choice",
+          "options": ["8", "10", "12", "16"],
+          "correct_answer": "12",
+          "explanation": "A Rubik's cube has 12 edge pieces. Each edge piece connects two faces and has exactly two colors."
+        },
+        {
+          "id": 2,
+          "question": "Which color is opposite to white on a standard Rubik's cube?",
+          "type": "multiple_choice",
+          "options": ["Red", "Yellow", "Blue", "Green"],
+          "correct_answer": "Yellow",
+          "explanation": "On a standard Rubik's cube, white is always opposite to yellow, red is opposite to orange, and green is opposite to blue."
+        },
+        {
+          "id": 3,
+          "question": "What is true about the center pieces of a Rubik's cube? (Select all that apply)",
+          "type": "multiple_select",
+          "options": [
+            "They can move to any position",
+            "They are locked in place relative to each other",
+            "They have only one color",
+            "They can change color"
+          ],
+          "correct_answers": ["They are locked in place relative to each other", "They have only one color"],
+          "explanation": "The center pieces of a Rubik's cube are locked in place relative to each other and each has only one color. They define the color of each face of the solved cube."
+        },
+        {
+          "id": 4,
+          "question": "In Rubik's Cube notation, what does R' mean?",
+          "type": "multiple_choice",
+          "options": [
+            "Turn the right face clockwise",
+            "Turn the right face counterclockwise",
+            "Turn the right face 180 degrees",
+            "Turn the red face"
+          ],
+          "correct_answer": "Turn the right face counterclockwise",
+          "explanation": "In standard Rubik's Cube notation, R refers to the Right face, and the apostrophe (') means to turn it counterclockwise when looking directly at that face."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "White Cross",
+      "description": "Learn the first step in solving a Rubik's Cube by creating the white cross",
+      "pages": [
+        {
+          "id": 1,
+          "title": "Getting Started",
+          "content": "The first step in solving the Rubik's cube is creating the white cross. We need to find and correctly position the four white edge pieces: white-green, white-blue, white-red, and white-orange. Hold the cube with the white center on top to maintain consistency throughout the solving process.<br><br><img src='/static/images/white-cross.png' alt='White Cross' class='content-image'>"
+        },
+        {
+          "id": 2,
+          "title": "Locating White Edges",
+          "content": "First, scan the cube to locate all four white edge pieces. They could be anywhere on the cube, in any orientation. We'll move each white edge piece to the bottom layer first, as this gives us the most control over placing them correctly. If a white edge is already on the top face but incorrectly oriented, we'll still move it to the bottom first.<br><br><video controls class='content-video'><source src='/static/videos/finding-white-edges.mp4' type='video/mp4'>Your browser does not support the video tag.</video>"
+        },
+        {
+          "id": 3,
+          "title": "Positioning White Edges - Method 1",
+          "content": "When a white edge piece is on the bottom layer with the white sticker facing down: Rotate the bottom face until the colored side of the edge piece aligns with its matching center color (e.g., line up the blue side of a white-blue edge with the blue center). Then rotate that color's face twice (180°) to bring the edge piece to the top, correctly positioned between the white center and its matching color center.<br><br><video controls class='content-video'><source src='/static/videos/4th-edge.mp4' type='video/mp4'>Your browser does not support the video tag.</video>"
+        },
+        {
+          "id": 4,
+          "title": "Positioning White Edges - Method 2",
+          "content": "<div class='content-small-text'>When a white edge piece is on the bottom layer with the white sticker not facing the yellow face:<br><br>Line up your piece directly above where it should go.<br><br>Rotate the bottom layer 90 degrees to the left to slot the piece in, moving it through two of the side faces.<br><br>Additionally, if the edge piece is in the top layer but oriented backwards, first rotate the face so that the edge piece is positioned at the bottom layer like in the video. Then, perform the following sequence:<br><ul><li>Rotate the front face back to its original position,</li><li>Followed by a counterclockwise rotation of the bottom face,</li><li>A clockwise rotation of the front face,</li><li>And finally a clockwise rotation of the bottom face.</li></ul>This sequence (D'F'RF) will correctly orient the white panel in the white cross.</div><br><video controls class='content-image'><source src='/static/videos/3rd-edge.mp4' type='video/mp4'>Your browser does not support the video tag.</video>"
+        },
+        {
+          "id": 5,
+          "title": "Completing the Cross",
+          "content": "Repeat this process for all four white edge pieces until you have a complete white cross on top, with each edge piece correctly positioned so that its second color matches the center of the adjacent face. Important: After positioning each edge piece, check that any previously placed edges are still correctly oriented. If you disrupt a piece you've already placed, you can refer to the video and see how to rectify any mistakes made while solving other edges.<br><br><video controls class='content-video'><source src='/static/videos/edge-in-middle.mp4' type='video/mp4'>Your browser does not support the video tag.</video>"
+        }
+      ],
+      "mini_quiz": [
+        {
+          "id": 1,
+          "question": "What is the first step in solving a Rubik's cube using the method described?",
+          "type": "multiple_choice",
+          "options": [
+            "Solve the yellow face",
+            "Create the white cross",
+            "Position the corner pieces",
+            "Complete the middle layer"
+          ],
+          "correct_answer": "Create the white cross",
+          "explanation": "The first step in the method described is to create the white cross by correctly positioning all four white edge pieces."
+        },
+        {
+          "id": 2,
+          "question": "Are these edgesproperly solved?<br><img src='/static/images/bad-edges.png' alt='White edge piece incorrectly positioned' class='content-image'>",
+          "type": "multiple_choice",
+          "options": ["Yes", "No"],
+          "correct_answer": "No",
+          "explanation": "This edge is not properly solved. Even though the white color is on the white face, the second colors (blue and green) do not align with their matching center pieces. All edges in the white cross must have both colors aligned with their respective center pieces."
+        },
+        {
+          "id": 3,
+          "question": "What should you do if a white edge piece is in the middle layer?",
+          "type": "multiple_choice",
+          "options": [
+            "Leave it there",
+            "Rotate the cube to put white on top",
+            "Move it to the bottom layer first",
+            "Solve a different edge first"
+          ],
+          "correct_answer": "Move it to the bottom layer first",
+          "explanation": "If a white edge piece is in the middle layer, you should rotate the face to move it to the bottom layer, then position it correctly."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "White Corners",
+      "description": "Learn how to complete the white face by correctly placing all four corner pieces",
+      "pages": [
+        {
+          "id": 1,
+          "title": "Finding White Corners",
+          "content": "After completing the white cross, the next step is to place the four white corner pieces.<br><br>Each corner has three colors: white plus two other colors that match adjacent faces.<br><br>Identify all four white corner pieces: white-red-blue, white-blue-orange, white-orange-green, and white-green-red.<br><br>Look at the two non-white colors to determine exactly where each corner belongs."
+        },
+        {
+          "id": 2,
+          "title": "Positioning Corners - Step 1",
+          "content": "For each white corner, first identify its correct final position by finding the corner slot where all three colors match. For example, the white-green-red piece belongs in the corner where the white, green, and red centers meet. Position the cube so the target corner slot is in the upper right corner of the front face (with white on top).<br><br><img src='/static/images/corner-placement.png' alt='Corner Placement' class='content-image'><br><br>In the photo above, the open spot on the white face is the \"destination\" and the corner on the bottom is the piece that we want to put in the destination. We need that piece to be beneath the destination before proceeding with the next step."
+        },
+        {
+          "id": 3,
+          "title": "Corner Insertion Algorithm",
+          "content": "Find the white corner piece you want to place. If it's on the bottom layer, position it directly beneath its correct slot (at the bottom right corner of the front face). Then perform this algorithm: R' D' R D (Right face counterclockwise, Down face counterclockwise, Right face clockwise, Down face clockwise). You may need to repeat this sequence 1-3 times until the corner is correctly oriented.<br><br><video controls class='content-video'><source src='/static/videos/corners.mp4' type='video/mp4'>Your browser does not support the video tag.</video>"
+        },
+        {
+          "id": 4,
+          "title": "If Corner is Incorrectly Placed",
+          "content": "If a white corner is already in the top layer but in the wrong position or incorrectly oriented, you need to move it out first. Use the same algorithm (R' D' R D) to move it to the bottom layer, then reposition the cube and apply the algorithm again to place it correctly. Always watch the white sticker to see how the corner rotates with each application of the algorithm."
+        },
+        {
+          "id": 5,
+          "title": "Completing the White Face",
+          "content": "Repeat this process for all four white corners. After each corner is placed, rotate the top layer (if needed) to position the next empty corner slot at the front right. Then find the appropriate corner piece, position it below, and apply the algorithm. When all four corners are correctly placed, the entire white face will be solved, with all adjacent colors matching their respective center pieces."
+        }
+      ],
+      "mini_quiz": [
+        {
+          "id": 1,
+          "question": "What algorithm is used to place the white corner pieces?",
+          "type": "multiple_choice",
+          "options": ["F R F' R'", "R' D' R D", "U R U' R'", "L' B L B'"],
+          "correct_answer": "R' D' R D",
+          "explanation": "The algorithm R' D' R D is used to place white corner pieces. This may need to be repeated multiple times for correct orientation."
+        },
+        {
+          "id": 2,
+          "question": "How many white corner pieces need to be placed in total?",
+          "type": "multiple_choice",
+          "options": ["2", "4", "6", "8"],
+          "correct_answer": "4",
+          "explanation": "There are 4 white corner pieces in total that need to be correctly placed to complete the white face."
+        },
+        {
+          "id": 3,
+          "question": "What should be the orientation of a correctly placed white-green-red corner?",
+          "type": "multiple_choice",
+          "options": [
+            "White facing up, green and red on sides",
+            "Green facing up, white and red on sides",
+            "Red facing up, white and green on sides",
+            "Any orientation as long as it's in the right position"
+          ],
+          "correct_answer": "White facing up, green and red on sides",
+          "explanation": "For a correctly placed white-green-red corner, the white sticker should face up (on the white face), while the green and red stickers should align with their respective face colors."
+        }
+      ]
+    }
+  ]
+} 

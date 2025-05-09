@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Quiz - Rubik's Cube Solver{% endblock %}
+
+{% block content %}
+<div class="quiz-container">
+    <div class="module-progress">
+        Quiz - Question {{ question_id }} of {{ total_questions }}
+    </div>
+    
+    <h1>Rubik's Cube Mastery Quiz</h1>
+    
+    <div class="question">
+        <h3>Question {{ question_id }}:</h3>
+        <p>{{ question.question }}</p>
+        
+        {% if error %}
+        <div class="feedback incorrect">
+            <p><strong>{{ error }}</strong></p>
+        </div>
+        {% endif %}
+        
+        <form method="post">
+            {% if question.type == 'multiple_choice' %}
+                <ul class="options">
+                    {% for option in question.options %}
+                    <li class="option">
+                        <label>
+                            <input type="radio" name="answer" value="{{ option }}" {% if previous_answer == option %}checked{% endif %} required>
+                            {{ option }}
+                        </label>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% elif question.type == 'fill_in_blank' %}
+                <input type="text" name="answer" placeholder="Your answer" value="{{ previous_answer }}" required>
+            {% endif %}
+            
+            <div class="page-nav form-buttons" style="margin-top: 20px;">
+                {% if question_id > 1 %}
+                <a href="{{ url_for('quiz', question_id=question_id-1) }}" class="btn btn-back">Previous</a>
+                {% else %}
+                <a href="{{ url_for('home') }}" class="btn btn-back">Back to Home</a>
+                {% endif %}
+                
+                <button type="submit" class="btn btn-success">Submit Answer</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %} 
