@@ -10,26 +10,25 @@ A Flask web application that teaches users how to solve a Rubik's Cube through s
 - Comprehensive final quiz to test overall knowledge
 - Quiz results with performance statistics
 
-## Project Structure
+## Requirements
 
-- `app.py`: Main Flask application
-- `modules.json`: Content for learning modules
-- `quiz.json`: Questions for the final quiz
-- `static/`: Static files (CSS, JavaScript)
-- `templates/`: HTML templates
+- Python 3.6 or higher
+- pip (Python package installer)
 
-## Installation
+## Installation and Setup
+
+### macOS
 
 1. Clone the repository:
 ```
-git clone https://github.com/yourusername/Rubiks-Cube-Solver.git
-cd Rubiks-Cube-Solver
+git clone https://github.com/yourusername/Rubiks-Cube-Two.git
+cd Rubiks-Cube-Two
 ```
 
 2. Create a virtual environment and activate it:
 ```
-python -m venv venv
-source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+python3 -m venv venv
+source venv/bin/activate
 ```
 
 3. Install the required packages:
@@ -37,19 +36,59 @@ source venv/bin/activate  # On Windows, use: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Usage
-
-1. Run the Flask application:
+4. Run the Flask application:
 ```
 python app.py
 ```
 
-2. Open your web browser and go to:
+5. Open your web browser and go to:
 ```
 http://localhost:5000
 ```
 
-3. Navigate through the learning modules and take quizzes to test your knowledge.
+### Windows
+
+1. Clone the repository:
+```
+git clone https://github.com/yourusername/Rubiks-Cube-Two.git
+cd Rubiks-Cube-Two
+```
+
+2. Create a virtual environment and activate it:
+```
+python -m venv venv
+venv\Scripts\activate
+```
+
+3. Install the required packages:
+```
+pip install -r requirements.txt
+```
+
+4. Run the Flask application:
+```
+python app.py
+```
+
+5. Open your web browser and go to:
+```
+http://localhost:5000
+```
+
+## Troubleshooting
+
+### macOS
+- If you encounter a "command not found" error for Python, try using `python3` instead of `python`
+- If you have permission issues, try using `sudo pip install -r requirements.txt`
+
+### Windows
+- Make sure Python is added to your PATH environment variable
+- If the virtual environment activation fails, try running PowerShell as administrator and execute: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+- If you're using Command Prompt, use `venv\Scripts\activate.bat`
+
+## Usage
+
+Navigate through the learning modules and take quizzes to test your knowledge on solving a Rubik's Cube.
 
 ## Development
 
